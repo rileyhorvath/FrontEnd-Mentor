@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | NFT preview card component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .nft {
+      width:100%;
+      height:301px;
+      position:relative;
+      border-radius:6px;
+      overflow:hidden;
+    }
+    .nft-image{
+      display:block;
+      width:100%;
+      height:100%;
+      background-image: url(images/image-equilibrium.jpg);
+      background-repeat: no-repeat;
+      background-size:cover;
+    }
+
+    .bigboycard-hover{
+      display:none;
+      justify-content:center;
+      align-items:center;
+      background-color:hsla(178, 100%, 50%, 50%);
+      width:100%;
+      height:100%;
+      position:absolute;
+      top:0;left:0;
+      cursor:pointer;
+    }
+    .nft:hover .bigboycard-hover{
+      display:flex;
+    }
+    html{
+      font-family: "Outfit", "sans-serif";
+    }
+    body{
+      background-color:hsl(217, 54%, 11%);
+    }
+    .bigboycard{
+      width:300px;
+      border:solid;
+      border-color:black;
+      align-self:center;
+      margin: 0 auto;
+      box-shadow:0px 0px 5px 5px black;
+      background-color:hsl(216, 50%, 16%);
+      border-radius:20px;
+      padding:30px;
+    }
+    .bigboycard img{
+      border-radius:8px;
+      width:100%;
+      display:block;
+    }
+    .bigboycard h2{
+      color:white;
+    }
+    .right{
+      float:right;
+    }
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+<div class="bigboycard">
+
+  <div class="nft">
+    <div class="bigboycard-hover">
+      <svg width="48" height="48" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M0 0h48v48H0z"/><path d="M24 9C14 9 5.46 15.22 2 24c3.46 8.78 12 15 22 15 10.01 0 18.54-6.22 22-15-3.46-8.78-11.99-15-22-15Zm0 25c-5.52 0-10-4.48-10-10s4.48-10 10-10 10 4.48 10 10-4.48 10-10 10Zm0-16c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6Z" fill="#FFF" fill-rule="nonzero"/></g></svg>
+    </div>
+    <a href="" class="nft-image"></a>
+  </div>
+
+  <h2>Equilibrium #3429</h2>
+
+  <p>Our Equilibrium collection promotes balance and calm.</p>
+
+  <p style="width:50%; float: left">0.041 ETH</p>
+  <p class="right">3 days left</p>
+  
+  <br style="clear:both">
+  <p>Creation of Jules Wyvern</p>
+</div>
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">The Legendary Wingdings Scripter</a>.
+  </div>
+</body>
+</html>
