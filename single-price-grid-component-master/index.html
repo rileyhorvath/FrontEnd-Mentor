@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Karla&family=Outfit:wght@600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Single Price Grid Component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    html{
+    font-family: 'Karla', sans-serif;
+    padding-left:2px;
+    background-color:hsl(204, 43%, 93%);
+    }
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+    div.center{
+      display:flex;
+    }
+    div.big{
+      width:450px;
+      margin:12% auto;
+    }
+    div.longcard{
+      border:none;
+      background-color:white;
+      border-top-right-radius:5px;
+      border-top-left-radius:5px;
+    }
+    div.flex{
+      display:flex;
+    }
+    div.flexcard{
+      width:50%;
+    }
+    p{
+      margin-left:20px;
+    }
+    a.button{
+      background-color:hsl(71, 73%, 54%);
+      display:block;
+      text-align:center;
+      padding:10px;
+      border-radius:4px;
+      margin:10px;
+    }
+    a:hover{
+      background-color:red;
+    }
+    span{
+      font-weight:200;
+      font-size:10pt;
+    }
+  </style>
+</head>
+<body>
+  <div class="center">
+  <div class="big">
+  <div class="longcard">
+
+  <h2 style="color:hsl(179, 62%, 43%); margin-left:30px; padding-top:25px;">Join our community</h2>
+
+  <p style="color:hsl(71, 73%, 54%);">30-day, hassle-free money back guarantee</p>
+
+  <p style="color:hsl(218, 22%, 67%);margin-bottom:0; padding-bottom:20px; padding-right:30px;">Gain access to our full library of tutorials along with expert code reviews. 
+  Perfect for any developers who are serious about honing their skills.</p>
+  </div>
+  <div class="flex">
+  <div class="flexcard" style="background-color:hsl(179, 62%, 43%); border-bottom-left-radius:5px; color:white">
+  Monthly Subscription
+
+  <p style="font-size:20pt;">&dollar;29 <span>per month</span></p>
+
+  <p>Full access for less than &dollar;1 a day</p>
+
+  <a class="button" href="">Sign Up</a>
+  </div>
+  <div class="flexcard" style="background-color:hsl(179, 62%, 50%);border-bottom-right-radius:5x; color:white;">
+  <p>Why Us</p>
+
+  <p>Tutorials by industry experts</p>
+  <p>Peer &amp; expert code review</p>
+  <p>Coding exercises</p>
+  <p>Access to our GitHub repos</p>
+  <p>Community forum</p>
+  <p>Flashcard decks</p>
+  <p>New videos every week</p>
+  </div>
+  </div>
+  </div>
+  </div>
+  
+  <footer>
+    <p class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="#">The Legendary WingDings Scripter</a>.
+    </p>
+  </footer>
+</body>
+</html>
