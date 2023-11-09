@@ -1,0 +1,55 @@
+.mainNav ul {
+    list-style-type:none; 
+}
+.mainNav ul li{
+display:inline-block;
+}
+.mainNav ul li a{
+    background-color: #EFEFEF;
+    color: #333;
+    text-decoration: none;
+    padding: 12px 18px;
+    display:block;
+    
+}
+.mainNav ul li a:hover {
+    background-color: cyan;
+}
+.mainNav ul li a:active{
+    background-color:#00C;
+    color: #FFF;
+}
+.page{
+    text-align:center;
+}
+.flex{
+    display:flex;
+
+}
+.info{
+    width:60%;
+
+}
+h1{
+    background-image:url(https://tse4.mm.bing.net/th?id=OIP.I7H41I9xv24thUrd6q1HwwHaEK&pid=Api&P=0&h=220)
+}
+.footer{
+    width:100%;
+    text-align:center;
+}
+h1{
+    height:100px;
+}
+.flex img{
+    justify-content:center;
+    align-items:center;
+    width:300px;
+    margin-left:300px;
+}
+.paragraph{
+    width:550px;
+    font-size:20pt;
+}
+.list{
+    font-size:20pt;
+}
