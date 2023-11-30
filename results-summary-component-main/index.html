@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;700;800&display=swap" rel="stylesheet">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Results summary component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .whole{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-family:"Hanken Grotesk"
+    }
+    .bigcard{
+      width:600px;
+      margin-top:10%;
+      display:flex;
+      align-items:stretch;
+    }
+    .card{
+      width:50%;
+      text-align:center;
+      color:hsl(0, 0%, 100%);
+      align-items:stretch;
+    }
+    .circle{
+      border-radius:50%;
+      width:200px;
+      height:200px;
+      margin-left:15%;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      background:linear-gradient(to bottom, hsla(256, 72%, 46%, 1), hsla(241, 72%, 46%, 0));
+      font-weight: 500;
+    }
+    .seventysix{
+      font-size:40pt;
+    }
+    .ofonehundred{
+      color:hsla(221, 100%, 96%, 50%);
+    }
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+    .summary{
+      padding-right:60%;
+    }
+    .slice{
+      padding-bottom:5%;
+      padding-top:5%;
+      margin-right:10%;
+      margin-left:10%;
+      border-radius:12px;
+      margin-bottom:7.5%;
+    }
+    img{
+      margin-right:20px;
+    }
+    a div{
+      margin-bottom:10%;
+      background-color:hsl(224, 30%, 27%);
+      margin-left:20px;
+      margin-right:20px;
+      border-radius:20px;
+      color:white;
+      text-decoration:none;
+      padding-top:12px;
+      padding-bottom:12px;
+    }
+    a:hover div{
+      background-color:blue;
+      text-decoration:none;
+    }
+    .result{
+      margin-top:0%;
+      margin-bottom:0%;
+      font-size:8pt;
+      color: hsla(241, 100%, 89%, 50%);
+    }
+    @media screen and (max-width:600px) {
+      .bigcard{
+        width:100%;
+        display:block;
+        padding-top:0px;
+        margin-top:0px;
+        border-top:0px;
+
+      }
+      .card{
+        width:100%;
+        border-top-right-radius:0px;
+        border-top-left-radius:0px;
+      }
+      .circle{
+        margin-left:22.5%;
+        margin-top:22.5%;
+      }
+      .result{
+        text-align:center;
+        padding-bottom:50px;
+        margin-left:40px;
+        margin-right:40px;
+        font-size:15pt;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="whole">
+    <div class="bigcard">
+      <div class="card" style="border-radius:15px; background: linear-gradient(to bottom, hsl(252, 100%, 67%), hsl(241, 81%, 54%));">Your Result
+        <div class="circle"><p><span class="seventysix">76</span><br><span class="ofonehundred">of 100</span></p></div>
+        <p style="margin-top:15%;margin-bottom:15%; font-size:30pt;">Great</p><br><p class="result">You scored higher than 65% of the people who have taken these tests.</p>
+      </div>
+      <div class="card" style="box-shadow:5px, 5px, 0, 5px, black; color:black;"><h3 class="summary">Summary</h3>
+        <div class="slice" style="background-color:hsla(0, 100%, 67%, 15%); color:hsla(0, 100%, 67%, 200%)"><img src="assets/images/icon-reaction.svg">Reaction &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color:hsla(0, 0%, 0%, 200%)"><strong>80</strong></span><span style="color:hsla(0, 0%, 0%, 50%)"> / 100</span></div>
+        <div class="slice" style="background-color:hsl(39, 100%, 56%, 15%); color:hsla(39, 100%, 56%, 200%);"><img src="assets/images/icon-memory.svg">Memory &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color:hsla(0, 0%, 0%, 200%)"><strong>92</strong></span><span style="color:hsla(0, 0%, 0%, 50%)"> / 100</span></div>
+        <div class="slice" style="background-color:hsl(166, 100%, 37%, 15%); color:hsla(166, 100%, 37%, 200%);"><img src="assets/images/icon-verbal.svg">Verbal &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color:hsla(0, 0%, 0%, 200%)"><strong>61</strong></span><span style="color:hsla(0, 0%, 0%, 50%)"> / 100</span></div>
+        <div class="slice" style="background-color:hsl(234, 85%, 45%, 15%); color:hsla(234, 85%, 45%, 200%);"><img src="assets/images/icon-visual.svg">Visual &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color:hsla(0, 0%, 0%, 200%)"><strong>72</strong></span><span style="color:hsla(0, 0%, 0%, 50%)"> / 100</span></div>
+        <a href="#"><div>Continue</div></a>
+      </div>
+    </div>
+  </div>
+  
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div>
+</body>
+</html>
