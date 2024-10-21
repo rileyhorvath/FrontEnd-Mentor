@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Age calculator app</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+    .whole {display:flex; justify-content:center; align-items:center;}
+    input{width:100%;}
+    .time{width:85%; display:flex; flex-direction:row; gap:5%;}
+    .cheese{background-color:whitesmoke; border-radius:15px; border-bottom-right-radius:50px;padding:20px;height:100%;  height:30vh; margin-top: 35vh; margin-bottom:35vh;width:30%; position:relative;}
+    .wholetime {font-size:45px;}
+    .line{
+      background-color:black;
+      width:100%;
+      height:2px;
+      display:inline-block;
+      position:absolute;
+      top:50%;
+      left:0;
+    }
+    .btn{
+      margin-left:90%;
+      margin-top:auto;
+      box-sizing:border-box;
+      border-radius:50%;
+      height:50px;
+      width:50px;
+      background-color:hsl(259, 100%, 65%);
+      background-image:url(assets/images/icon-arrow.svg);
+      background-size:80%;
+      background-repeat:no-repeat;
+      background-position:center;
+      z-index:10;
+      position:relative;
+    }
+    .linebuttoncontainer{
+      position:relative;
+      box-sizing:border-box;
+    }
+  </style>
+</head>
+<body>
+  <div class="whole">
+    <div class="cheese">
+      <div class="time">
+        <div class="day">
+        Day
+        <input type="text" placeholder="DD" id="day">
+        </div>
+
+        <div class="month">
+        Month
+        <input type="text" placeholder="MM" id="month">
+        </div>
+
+        <div class="year">
+        Year
+        <input type="text" placeholder="YYYY" id="year">
+        </div>
+      </div>
+      <div class="linebuttoncontainer">
+        <span class="line"></span>
+        <button id="btn" class="btn"></button>
+      </div>
+
+
+<div class="wholetime">
+  <div class="remainderyear">
+    <span id="finalyears">--</span> years
+  </div>
+
+
+  <div class="remaindermonth">
+    <span id="finalmonths">--</span> months
+  </div>
+
+  <div class="remainderday">
+    <span id="finaldays">--</span> days
+  </div>
+</div>
+
+
+
+    </div>
+  </div>
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div>
+
+
+  <script src="moment.js" type="text/javascript"></script>
+  <script>
+    let submit = document.getElementById("btn");
+    submit.addEventListener("click", function(e){
+    e.preventDefault();
+    let currentdate = moment()
+    let submitdays = document.getElementById("day").value;
+    let submitmonths = document.getElementById("month").value;
+    let submityears = document.getElementById("year").value;
+    let submitdate = moment([submityears, submitmonths - 1, submitdays]);
+
+
+
+    let difference = moment.duration(currentdate.diff(submitdate));
+
+
+    
+
+    document.getElementById("finalyears").innerText = difference.years();
+    document.getElementById("finalmonths").innerText = difference.months();
+    document.getElementById("finaldays").innerText = difference.days();
+    
+    })
+  </script>
+</body>
+</html>
