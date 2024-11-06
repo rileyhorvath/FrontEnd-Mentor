@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/tipCalc.css">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Tip calculator app</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+
+<div class="wrapper">
+  <h1>SPLI<br>TTER</h1>
+
+
+  <div class="app">
+    <div class="fields">
+      <div>
+        <label for="txtBill">Bill</label>
+        <input type="text" placeholder="0" name="txtBill" id="txtBill">
+      </div>
+
+      <div>
+        <label for="txtBill">Select Tip %</label>
+        <div class="grid">
+          <div>
+            <input for="rb5" type="radio" name="percent" id="rb5">
+            <label for="rb5" onclick="UpdatePercent(5)">5%</label>
+          </div>
+
+
+          <div>
+            
+            <input for="rb10" type="radio" name="percent" id="rb10">
+            <label for="rb10" onclick="UpdatePercent(10)">10%</label>
+          </div>
+
+
+          <div>
+            
+            <input for="rb15" type="radio" name="percent" id="rb15">
+            <label for="rb15" onclick="UpdatePercent(15)">15%</label>
+          </div>
+
+
+          <div>
+            
+            <input for="rb25" type="radio" name="percent" id="rb25">
+            <label for="rb25" onclick="UpdatePercent(25)">25%</label>
+          </div>
+
+
+          <div>
+            
+            <input for="rb50" type="radio" name="percent" id="rb50">
+            <label for="rb50" onclick="UpdatePercent(50)">50%</label>
+          </div>
+
+
+          <div>
+            <input type="radio" name="percent" id="rbCustom">
+            <input type="text" placeholder="Custom" name="txtCustom" id="txtCustom" onchange = "uncheckbuttons(document.getElementById('txtCustom').value)">
+          </div>
+        </div>
+      </div>
+
+      <div>
+        Number of People
+      </div>
+      <div>
+        <label for="txtPeople">Number of People</label>
+        <input type="number" placeholder="0" name="txtPeople" id="txtPeople">
+      </div>
+
+    </div>
+
+    <div class="results">
+      <div>
+        <div><p>Tip Amount<span>/ person</span></p></div>
+        <div id="tipAmountPerson">$0.00</div>
+      </div>
+
+        <div>
+          <div><p>Total<span>/ person</span></p></div>
+            <div id="totalAmountPerson">$0.00</div>
+        </div>
+
+
+
+        <div>
+          <a href="#" id="btnReset" onclick="document.location.reload(true)">Reset</a>
+        </div>
+      
+    </div>
+
+  </div>
+  </div>
+  
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div>
+
+  <script>
+    let bill = document.getElementById("txtBill");
+    let people = document.getElementById("txtPeople");
+    let tip = 0;
+    let custom = document.getElementById("txtCustom");
+
+    function UpdatePercent(newtip){
+      newnewtip = 1 + (newtip * 0.01);
+      tip = newnewtip;
+      CalculateTotal(people.value, bill.value);
+      CalculateTip(people.value, bill.value);
+    }
+    function uncheckbuttons(newtip){
+      document.getElementById("rb5").checked = false;
+      document.getElementById("rb10").checked = false;
+      document.getElementById("rb15").checked = false;
+      document.getElementById("rb25").checked = false;
+      document.getElementById("rb50").checked = false;
+      document.getElementById("rbCustom").checked = true;
+      newnewtip = 1 + (newtip * 0.01);
+      tip = newnewtip;
+      CalculateTotal(people.value, bill.value);
+      CalculateTip(people.value, bill.value);
+    }
+    
+    bill.addEventListener("change", function(e){
+      CalculateTotal(people.value, bill.value);
+      CalculateTip(people.value, bill.value);
+    });
+    people.addEventListener("change", function(e){
+      CalculateTotal(people.value, bill.value);
+      CalculateTip(people.value, bill.value);
+    });
+
+    function CalculateTotal(parampeople, parambill){
+      console.log(tip)
+      console.log(Math.abs(1 - tip))
+      document.getElementById("totalAmountPerson").innerText = "$" + ((parambill * tip) / parampeople).toFixed(2);
+      return (parambill * tip) / parampeople
+    }
+    function CalculateTip(parampeople, parambill){ 
+      console.log(tip)
+      document.getElementById("tipAmountPerson").innerText = "$" + ((Math.abs(1 - tip) * parambill) / parampeople).toFixed(2);
+      return Math.abs(1 - tip) * parambill;
+    }
+  </script>
+</body>
+</html>
